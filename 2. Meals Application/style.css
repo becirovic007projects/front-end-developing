@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #ece9e6;
+  background: -webkit-linear-gradient(to right, #816464, #ad855c);
+  background: linear-gradient(to right, #8f8b8b, #9b5713);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  margin: 2rem;
+  min-height: 100vh;
+}
+
+.mobile-container {
+  background-color: #eeeeee;
+
+  box-shadow: 0 0 10px #3333331a;
+  border-radius: 0px;
+  overflow: hidden; /* ? */
+  width: 400px;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: 1px solid #9c8f7e;
+}
+
+header input {
+  background-color: #eef0f1;
+  border: 1px solid #d7d2cc;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+}
+
+header button {
+  background-color: transparent;
+  color: #cfe8ef;
+  border: none;
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+
+.fav-container {
+  text-align: center;
+  padding: 1rem;
+  background-color: #fefefe;
+  border: 1px solid #333;
+  border-radius: 2.5%;
+}
+
+.fav-meals {
+  display: flex;
+  list-style-type: none;
+  padding: 0rem;
+  overflow: auto;
+
+  flex-wrap: wrap;
+  justify-content: center;
+
+  border-radius: 3px;
+}
+
+.fav-meals li {
+  width: 85px;
+
+  cursor: pointer; /*added at the end*/
+  position: relative;
+}
+
+.fav-meals li .clear {
+  background-color: transparent;
+  position: absolute;
+  top: 0rem;
+  right: -1rem;
+  border: none;
+  font-size: 1.2rem;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.fav-meals li:hover .clear {
+  opacity: 1;
+}
+
+.fav-meals li img {
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 10px #3333331a;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 70px;
+  width: 70px;
+}
+
+.fav-meals li span {
+  font-size: 0.9rem;
+  text-overflow: ellipsis;
+  display: inline-block;
+  white-space: wrap;
+  /* overflow: hidden;
+  bottom: -1rem;
+  left: 0;
+  position: absolute;
+  */
+}
+
+/*
+.fav-meals li:hover span {
+  white-space: normal;
+  overflow: auto;
+}
+*/
+
+.meal {
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px #3333331a;
+  margin: 1rem;
+  overflow: hidden;
+  border: 0.5px solid #d7d2cc;
+
+  /*added at the end... cursor: pointer;*/
+}
+
+.meal-header {
+  position: relative;
+}
+
+.meal-header .random {
+  top: 1rem;
+  background-color: #fff;
+  position: absolute;
+  padding: 0.25rem 0.5rem;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.meal-header img {
+  object-fit: cover;
+  height: 350px;
+  width: 100%;
+}
+
+.meal-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.meal-body h4 {
+  margin: 0rem;
+}
+
+.meal-body .fav-btn {
+  background-color: transparent; /* */
+  border: none;
+  font-size: 1.5rem;
+  color: grey;
+  cursor: pointer;
+}
+
+.meal-body .fav-btn.activee {
+  color: rgb(247, 164, 178);
+}
+/* <div class="meal">
+    <div class="meal-header">
+      <span class="random"> Random Recipe </span>
+      <img
+        src="https://www.themealdb.com/images/media/meals/tnwy8m1628770384.jpg"
+        alt=""
+      />
+    </div>
+    <div class="meal-body">
+      <h4>Veggie Veggies</h4>
+      <button class="fav-btn">
+        <i class="fas fa-heart"></i>
+      </button>
+    </div>
+  </div> */
+
+.meals {
+  border: 1px solid #333;
+}
+
+.popup-container {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* displaying all screen */
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* displaying all screen */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  background-color: #fff;
+  max-width: 600px;
+  max-height: 100vh;
+  width: 100%;
+  padding: 0 2rem;
+  border-radius: 5px;
+  position: relative;
+
+  overflow: auto;
+}
+
+.meal-info h1 {
+  text-align: center;
+}
+
+.popup .close-popup {
+  top: 1rem;
+  right: 1rem;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.popup-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
