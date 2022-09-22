@@ -24,9 +24,5 @@ function countDown() {
   console.log(DAYS, hours, mins, seconds); // console printting also
 }
 
-function formatTime(time) {
-  return time < 10 ? `(0$(time))` : time;
-}
-
 countDown();
 setInterval(countDown, 1000);
