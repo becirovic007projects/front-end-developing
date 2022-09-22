@@ -21,7 +21,7 @@ function countDown() {
   minsE1.innerHTML = mins;
   secondsE1.innerHTML = seconds;
 
-  console.log(DAYS, hours, mins, seconds); // console printting also
+  console.log(DAYS, hours, mins, seconds);
 }
 
 countDown();

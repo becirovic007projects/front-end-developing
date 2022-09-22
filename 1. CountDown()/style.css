@@ -5,7 +5,7 @@
 }
 
 body {
-  color: whitesmoke;
+  color: rgb(184, 136, 136);
   background-image: url("image_00.jpg");
   min-height: 100vh;
   background-size: cover;
@@ -19,7 +19,7 @@ body {
   align-items: center;
 }
 
-h1 {
+h2 {
   font-size: 4rem;
   margin-top: -0rem;
 
