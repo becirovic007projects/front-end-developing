@@ -20,8 +20,6 @@ function countDown() {
   hoursE1.innerHTML = hours;
   minsE1.innerHTML = mins;
   secondsE1.innerHTML = seconds;
-
-  // console.log(days, hours, mins, seconds);
 }
 
 countDown();
