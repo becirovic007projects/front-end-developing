@@ -16,13 +16,21 @@ body {
   min-height: 100vh;
 }
 
-.mobile-container {
+.container {
   background-color: #eeeeee;
 
   box-shadow: 0 0 10px #3333331a;
   border-radius: 0px;
   overflow: hidden; /* ? */
   width: 400px;
+}
+
+.fav {
+  text-align: center;
+  padding: 1rem;
+  background-color: #fefefe;
+  border: 1px solid #333;
+  border-radius: 2.5%;
 }
 
 img {
@@ -53,15 +61,7 @@ header button {
   margin-left: 10px;
 }
 
-.fav-container {
-  text-align: center;
-  padding: 1rem;
-  background-color: #fefefe;
-  border: 1px solid #333;
-  border-radius: 2.5%;
-}
-
-.fav-meals {
+.ul {
   display: flex;
   list-style-type: none;
   padding: 0rem;
@@ -73,14 +73,14 @@ header button {
   border-radius: 3px;
 }
 
-.fav-meals li {
+.ul li {
   width: 85px;
 
   cursor: pointer; /*added at the end*/
   position: relative;
 }
 
-.fav-meals li .clear {
+.ul li .clear {
   background-color: transparent;
   position: absolute;
   top: 0rem;
@@ -91,11 +91,11 @@ header button {
   cursor: pointer;
 }
 
-.fav-meals li:hover .clear {
+.ul li:hover .clear {
   opacity: 1;
 }
 
-.fav-meals li img {
+.ul li img {
   border: 2px solid #ffffff;
   box-shadow: 0 0 10px #3333331a;
   border-radius: 50%;
@@ -104,7 +104,7 @@ header button {
   width: 70px;
 }
 
-.fav-meals li span {
+.ul li span {
   font-size: 0.9rem;
   text-overflow: ellipsis;
   display: inline-block;
@@ -117,13 +117,13 @@ header button {
 }
 
 /*
-.fav-meals li:hover span {
+.ul li:hover span {
   white-space: normal;
   overflow: auto;
 }
 */
 
-.meal {
+.viewed {
   border-radius: 10px;
   box-shadow: 0 0 10px 2px #3333331a;
   margin: 1rem;
@@ -133,11 +133,11 @@ header button {
   /*added at the end... cursor: pointer;*/
 }
 
-.meal-header {
+.viewed-header {
   position: relative;
 }
 
-.meal-header .random {
+.viewed-header .random {
   top: 1rem;
   background-color: #fff;
   position: absolute;
@@ -146,24 +146,24 @@ header button {
   border-bottom-right-radius: 3px;
 }
 
-.meal-header img {
+.viewed-header img {
   object-fit: cover;
   height: 350px;
   width: 100%;
 }
 
-.meal-body {
+.viewed-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
 }
 
-.meal-body h4 {
+.viewed-body h4 {
   margin: 0rem;
 }
 
-.meal-body .fav-btn {
+.viewed-body .fav-btn {
   background-color: transparent; /* */
   border: none;
   font-size: 1.5rem;
@@ -171,30 +171,15 @@ header button {
   cursor: pointer;
 }
 
-.meal-body .fav-btn.activee {
+.viewed-body .fav-btn.active {
   color: rgb(247, 164, 178);
 }
-/* <div class="meal">
-    <div class="meal-header">
-      <span class="random"> Random Recipe </span>
-      <img
-        src="https://www.themealdb.com/images/media/meals/tnwy8m1628770384.jpg"
-        alt=""
-      />
-    </div>
-    <div class="meal-body">
-      <h4>Veggie Veggies</h4>
-      <button class="fav-btn">
-        <i class="fas fa-heart"></i>
-      </button>
-    </div>
-  </div> */
 
-.meals {
+.view {
   border: 1px solid #333;
 }
 
-.popup-container {
+.popup {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
   /* displaying all screen */
@@ -209,8 +194,8 @@ header button {
   justify-content: center;
 }
 
-.popup {
-  background-color: #fff;
+.pop {
+  background-color: rgb(245, 243, 243);
   max-width: 600px;
   max-height: 100vh;
   width: 100%;
@@ -221,11 +206,11 @@ header button {
   overflow: auto;
 }
 
-.meal-info h1 {
+.info h1 {
   text-align: center;
 }
 
-.popup .close-popup {
+.pop .close {
   top: 1rem;
   right: 1rem;
   position: absolute;
@@ -235,7 +220,7 @@ header button {
   cursor: pointer;
 }
 
-.popup-container.hidden {
+.popup.hidden {
   opacity: 0;
   pointer-events: none;
 }
