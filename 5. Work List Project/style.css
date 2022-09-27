@@ -1,8 +1,10 @@
 body {
   background: #524558;
+  margin: 1rem auto;
 }
 .container {
-  max-width: 400px;
+  max-width: 450px;
+  max-height: 100vh;
 }
 input[type="text"],
 input[type="text"]:focus {
@@ -11,13 +13,13 @@ input[type="text"]:focus {
   background: rgba(136, 100, 153, 0.199);
   max-width: 400px;
 }
-.radnje li {
+.unlist li {
   background: #5d5572;
 }
 .delete {
   cursor: pointer;
 }
 
-.nemaa {
+.hidden {
   display: none !important;
 }
