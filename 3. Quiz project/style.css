@@ -9,24 +9,21 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0rem;
   min-height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 1rem;
 }
 
-.container_00 {
+.container {
   background-color: whitesmoke;
-  width: 600px;
-  max-width: 100%;
-
+  max-width: 450px;
   overflow: hidden;
-
   border-radius: 10px;
   box-shadow: 0 0 10px 50px rgba(100, 100, 100, 0.1);
 }
 
-.container_01 {
+.main {
   padding: 4rem;
 }
 
@@ -54,11 +51,6 @@ button {
 button:hover {
   background-color: #6e3586;
 }
-
-/*button:focus {
-  background-color: #441c55;
-  outline: none;
-} */
 
 h2 {
   margin: 0rem;

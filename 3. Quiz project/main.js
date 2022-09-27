@@ -10,7 +10,7 @@ const quizData = [
 
   {
     question:
-      "Event Loops, Callbacks, Promises and Async/Await features were introduced in javascript in: ",
+      "Promises and Async/Await features were introduced in javascript in: ",
     a: "ECMAScript 2005",
     b: "ECMAScript 2017",
     c: "ECMAScript 2000",
@@ -51,86 +51,72 @@ const quizData = [
   },
 ];
 
-const answersEls = document.querySelectorAll(".answer");
+const answers = document.querySelectorAll(".answer");
 
-const quiz = document.getElementById("QUIZ");
+const quiz = document.getElementById("quiz");
 
-const questionE1 = document.getElementById("question");
-const a_text = document.getElementById("a_text");
-const b_text = document.getElementById("b_text");
-const c_text = document.getElementById("c_text");
-const d_text = document.getElementById("d_text");
-const submitBtn = document.getElementById("submit");
+const quest = document.getElementById("question");
+const A = document.getElementById("A");
+const B = document.getElementById("B");
+const C = document.getElementById("C");
+const D = document.getElementById("D");
+const btn = document.getElementById("submit");
 
-let currentQuiz = 0;
+let currentQ = 0;
 
-loadQuiz();
+loadQ();
 
-function loadQuiz() {
-  deselectAnswers();
+function loadQ() {
+  deselecting();
 
-  const currentQuizData = quizData[currentQuiz];
+  const currentData = quizData[currentQ];
 
-  questionE1.innerText = currentQuizData.question;
-  a_text.innerText = currentQuizData.a;
-  b_text.innerText = currentQuizData.b;
-  c_text.innerText = currentQuizData.c;
-  d_text.innerText = currentQuizData.d;
+  quest.innerText = currentData.question;
+  A.innerText = currentData.a;
+  B.innerText = currentData.b;
+  C.innerText = currentData.c;
+  D.innerText = currentData.d;
 }
 
 function getSelected() {
   let answer = undefined;
 
-  answersEls.forEach((answerElement) => {
-    if (answerElement.checked) {
-      answer = answerElement.id;
+  answers.forEach((element) => {
+    if (element.checked) {
+      answer = element.id;
     }
   });
 
   return answer;
 }
 
-function deselectAnswers() {
-  answersEls.forEach((answerElement) => {
-    if (answerElement.checked) {
-      answerElement.checked = false;
+function deselecting() {
+  answers.forEach((element) => {
+    if (element.checked) {
+      element.checked = false;
     }
   });
 }
 
 let score = 0;
 
-submitBtn.addEventListener("click", () => {
-  //check to see the ANSWEEEEER
-
+btn.addEventListener("click", () => {
   const answer = getSelected();
 
   console.log(answer);
 
   if (answer) {
-    if (answer === quizData[currentQuiz].correct) {
+    if (answer === quizData[currentQ].correct) {
       score++;
     }
 
-    currentQuiz++;
-    if (currentQuiz < quizData.length) {
-      loadQuiz();
+    currentQ++;
+    if (currentQ < quizData.length) {
+      loadQ();
     } else {
-      //TODO: Show resulzzzzZzzzzZZzzzz
-      // alert("End Of The Quiz.");
-
       quiz.innerHTML = `<h2> You answered correctly at ${score}/${quizData.length} questions. </h2>
       <button onclick = "location.reload()"> Reload </button>
       `;
     }
-
-    /* loadQuiz(); */
   }
-});
-
-const allSpanElements = document.querySelectorAll("span");
-
-allSpanElements.forEach((spanElement) => {
-  // Here comes the Code that should be executed on every Element, e.g.
-  spanElement.innerHTML = "This Content will appear on every span Element now";
 });
