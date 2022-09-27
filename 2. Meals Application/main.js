@@ -91,9 +91,9 @@ function addMeal(access, random = false) {
 }
 
 function getDataLS() {
-  const mealIdsss = JSON.parse(sessionStorage.getItem("key"));
+  const dataId = JSON.parse(sessionStorage.getItem("key"));
 
-  return mealIdsss === null ? [] : mealIdsss;
+  return dataId === null ? [] : dataId;
 }
 
 function setLS(dataID) {
