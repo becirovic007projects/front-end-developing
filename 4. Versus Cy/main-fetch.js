@@ -1,27 +1,27 @@
-const verseChoose = document.querySelector("select");
-const poemDisplay = document.querySelector("pre");
+const select = document.querySelector("select");
+const display = document.querySelector("pre");
 
-verseChoose.addEventListener("change", () => {
-  const verse = verseChoose.value;
+select.addEventListener("change", () => {
+  const option = select.value;
 
-  updateDisplay(verse);
+  updateDisplay(option);
 });
 
-function updateDisplay(verse) {
-  verse = verse.replace(" ", "").toLowerCase();
-  const url = `${verse}.txt`;
-  fetch(url)
+function updateDisplay(opt) {
+  opt = opt.replace(" ", "").toLowerCase();
+  const data = `${opt}.txt`;
+  fetch(data)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
       }
       return response.text();
     })
-    .then((text) => (poemDisplay.textContent = text))
+    .then((text) => (display.textContent = text))
     .catch(
-      (error) => (poemDisplay.textContent = `Could not fetch verse: ${error}`)
+      (error) => (display.textContent = `Could not fetch verse: ${error}`)
     );
 }
 
-updateDisplay("Notion 1");
-verseChoose.value = "Notion 1";
+updateDisplay("Verse 1");
+select.value = "Verse 1";
