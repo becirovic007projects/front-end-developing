@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/primeflex@3.1.2/primeflex.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/primeflex/themes/arya-blue.css"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <title>Quiz Applications</title>
   </head>
-  <body>
-    <div class="container" id="quiz">
+  <body class="bg-blue-50">
+    <div class="bg-indigo-50 container" id="quiz">
       <div class="main">
-        <h2 id="question">Question</h2>
+        <h3 id="question">Question</h3>
         <ul>
           <li>
             <input type="radio" id="a" name="answer" class="answer" />
@@ -29,9 +39,17 @@
             <label id="D" for="d">Answer</label>
           </li>
         </ul>
+        <div id="error-message" class="font-bold text-blue-400">
+          Please select one answer
+        </div>
       </div>
 
-      <button id="submit">Next</button>
+      <button
+        class="transition-colors transition-duration-500 bg-blue-700 hover:bg-blue-600"
+        id="submit"
+      >
+        Next
+      </button>
     </div>
     <script src="main.js"></script>
   </body>

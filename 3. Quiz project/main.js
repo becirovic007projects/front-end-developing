@@ -53,8 +53,6 @@ const quizData = [
 
 const answers = document.querySelectorAll(".answer");
 
-const quiz = document.getElementById("quiz");
-
 const quest = document.getElementById("question");
 const A = document.getElementById("A");
 const B = document.getElementById("B");
@@ -62,14 +60,14 @@ const C = document.getElementById("C");
 const D = document.getElementById("D");
 const btn = document.getElementById("submit");
 
-let currentQ = 0;
+let currentQuestionIndex = 0;
 
-loadQ();
+loadQuestions();
 
-function loadQ() {
+function loadQuestions() {
   deselecting();
 
-  const currentData = quizData[currentQ];
+  const currentData = quizData[currentQuestionIndex];
 
   quest.innerText = currentData.question;
   A.innerText = currentData.a;
@@ -99,24 +97,46 @@ function deselecting() {
 }
 
 let score = 0;
+const errorMessage = document.getElementById("error-message");
 
 btn.addEventListener("click", () => {
   const answer = getSelected();
 
   console.log(answer);
 
-  if (answer) {
-    if (answer === quizData[currentQ].correct) {
-      score++;
-    }
+  if (!answer) {
+    return showErrorMessage();
+  }
 
-    currentQ++;
-    if (currentQ < quizData.length) {
-      loadQ();
-    } else {
-      quiz.innerHTML = `<h2> You answered correctly at ${score}/${quizData.length} questions. </h2>
-      <button onclick = "location.reload()"> Reload </button>
-      `;
-    }
+  hideErrorMessage();
+
+  if (answer === quizData[currentQuestionIndex].correct) {
+    score++;
+  }
+
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < quizData.length) {
+    loadQuestions();
+  } else {
+    showResult();
   }
 });
+
+function hideErrorMessage() {
+  errorMessage.style.display = "none";
+}
+
+function showErrorMessage() {
+  errorMessage.style.display = "block";
+}
+
+function showResult() {
+  const quiz = document.getElementById("quiz");
+  quiz.innerHTML = `
+  <h2> 
+    You answered correctly at ${score}/${quizData.length} questions. 
+  </h2>
+  <button onclick = "location.reload()"> Reload </button>
+`;
+}
