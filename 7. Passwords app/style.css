@@ -14,7 +14,7 @@ body {
 .container {
   background-color: #e6e6fa;
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: 7px;
   display: flex;
   justify-content: center;
   align-items: center;
