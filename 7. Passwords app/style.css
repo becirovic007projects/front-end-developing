@@ -1,26 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 body {
   background-color: #fffff0;
   color: #8b4513;
-  margin: 1rem;
+  margin: 0.5rem;
   display: flex;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Montserrat";
 }
 
-#container {
+.container {
   background-color: #e6e6fa;
-  padding: 3rem;
-  border-radius: 1rem;
-  border: 2px solid black;
+  padding: 1rem;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-width: 450px;
 }
 
-#form_00 {
+#form {
   display: grid;
   grid-template-columns: auto auto;
   row-gap: 3rem;
@@ -38,7 +40,7 @@ label {
   font-weight: bold;
 }
 
-.class_00 {
+.rang {
   display: flex;
   align-items: center;
 }
@@ -59,7 +61,7 @@ h3 {
   border-radius: 0.5rem;
 }
 
-.btn_00 {
+.btn {
   grid-column: span 2;
   background-color: transparent;
   border: 2px solid #333;
@@ -69,6 +71,6 @@ h3 {
   border-radius: 1rem;
 }
 
-.btn_00:hover {
+.btn:hover {
   background-color: whitesmoke;
 }

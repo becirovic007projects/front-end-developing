@@ -5,36 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/primeflex@3.1.2/primeflex.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/primeflex/themes/arya-blue.css"
+    />
+
     <title>Password Generator</title>
   </head>
   <body>
-    <div id="container">
+    <div class="container">
       <h1>Password Generator</h1>
-      <h3 id="passwordDisplay"></h3>
-      <form id="form_00">
-        <label for="input_01_number">Number Of Characters</label>
-        <div class="class_00">
-          <input type="range" min="1" max="50" value="10" id="input_00_range" />
+      <h3 id="pass"></h3>
+      <form id="form">
+        <label for="A">Number Of Characters</label>
+        <div class="rang">
+          <input type="range" min="1" max="50" value="10" id="range" />
           <input
             type="number"
             min="1"
             max="50"
             value="10"
-            id="input_01_number"
+            id="A"
             class="class_01"
           />
         </div>
 
-        <label for="input_02_checkbox">Include UpperCase:</label>
-        <input type="checkbox" id="input_02_checkbox" />
+        <label for="box1">Include UpperCase:</label>
+        <input type="checkbox" id="box1" />
 
-        <label for="input_03_checkbox">Include Numbers:</label>
-        <input type="checkbox" id="input_03_checkbox" />
+        <label for="box2">Include Numbers:</label>
+        <input type="checkbox" id="box2" />
 
-        <label for="input_04_checkbox">Include Symbols:</label>
-        <input type="checkbox" id="input_04_checkbox" />
+        <label for="box3">Include Symbols:</label>
+        <input type="checkbox" id="box3" />
 
-        <button class="btn_00" type="submit">Produce/Create Password</button>
+        <button class="btn" type="submit">Produce/Create Password</button>
       </form>
     </div>
     <script src="main.js"></script>

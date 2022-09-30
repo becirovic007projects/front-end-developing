@@ -1,57 +1,46 @@
-const input_00_range = document.getElementById("input_00_range");
-const input_01_number = document.getElementById("input_01_number");
+const range = document.getElementById("range");
+const A = document.getElementById("A");
 
-const letterAmount = document.getElementById("input_01_number");
-const includeUpperCase = document.getElementById("input_02_checkbox");
-const includeNumbers = document.getElementById("input_03_checkbox");
-const includeSymbols = document.getElementById("input_04_checkbox");
+const letter = document.getElementById("A");
+const upCase = document.getElementById("box1");
+const incNum = document.getElementById("box2");
+const incSym = document.getElementById("box3");
 
-input_00_range.addEventListener("input", syncFunction);
+range.addEventListener("input", syncFunction);
 
-input_01_number.addEventListener("input", syncFunction);
+A.addEventListener("input", syncFunction);
 
 function syncFunction(e) {
   const variable_00 = e.target.value;
-  input_00_range.value = variable_00;
-  input_01_number.value = variable_00;
+  range.value = variable_00;
+  A.value = variable_00;
 }
 
-const formJavaScript = document.getElementById("form_00");
+const js = document.getElementById("form");
 
-const passwordDisplay = document.getElementById("passwordDisplay");
+const pass = document.getElementById("pass");
 
-formJavaScript.addEventListener("submit", (e) => {
+js.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const letterAmount = input_01_number.value;
-  const includeUpperCase = input_02_checkbox.checked;
-  const includeNumbers = input_03_checkbox.checked;
-  const includeSymbols = input_04_checkbox.checked;
+  const letter = A.value;
+  const upCase = box1.checked;
+  const incNum = box2.checked;
+  const incSym = box3.checked;
 
-  const variable_01 = producePassword(
-    letterAmount,
-    includeUpperCase,
-    includeNumbers,
-    includeSymbols
-  );
+  const variable_01 = producePassword(letter, upCase, incNum, incSym);
 
-  passwordDisplay.innerText = variable_01;
+  pass.innerText = variable_01;
 });
 
-function producePassword(
-  letterAmount,
-  includeUpperCase,
-  includeNumbers,
-  includeSymbols
-) {
+function producePassword(letter, upCase, incNum, incSym) {
   let letterCode = lowwerLetter_from_char_codes;
-  if (includeUpperCase)
-    letterCode = letterCode.concat(upperLetter_from_char_codes);
-  if (includeNumbers) letterCode = letterCode.concat(numbers_from_char_codes);
-  if (includeSymbols) letterCode = letterCode.concat(symbols_from_char_codes);
+  if (upCase) letterCode = letterCode.concat(upperLetter_from_char_codes);
+  if (incNum) letterCode = letterCode.concat(numbers_from_char_codes);
+  if (incSym) letterCode = letterCode.concat(symbols_from_char_codes);
 
   const passwordStoringVariableArray = [];
-  for (let i = 0; i < letterAmount; i++) {
+  for (let i = 0; i < letter; i++) {
     const letterCODE =
       letterCode[Math.floor(Math.random() * letterCode.length)];
 
