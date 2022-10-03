@@ -1,69 +1,61 @@
 const range = document.getElementById("range");
-const A = document.getElementById("A");
+const num = document.getElementById("num");
+const form = document.getElementById("form");
+const text = document.getElementById("text");
 
-const letter = document.getElementById("A");
-const upCase = document.getElementById("box1");
-const incNum = document.getElementById("box2");
-const incSym = document.getElementById("box3");
+range.addEventListener("input", getData);
 
-range.addEventListener("input", syncFunction);
+num.addEventListener("input", getData);
 
-A.addEventListener("input", syncFunction);
-
-function syncFunction(e) {
-  const variable_00 = e.target.value;
-  range.value = variable_00;
-  A.value = variable_00;
+function getData(e) {
+  const data = e.target.value;
+  range.value = data;
+  num.value = data;
 }
 
-const js = document.getElementById("form");
-
-const pass = document.getElementById("pass");
-
-js.addEventListener("submit", (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const letter = A.value;
+  const char = num.value;
   const upCase = box1.checked;
   const incNum = box2.checked;
   const incSym = box3.checked;
 
-  const variable_01 = producePassword(letter, upCase, incNum, incSym);
+  const data = password(char, upCase, incNum, incSym);
 
-  pass.innerText = variable_01;
+  text.innerText = data;
 });
 
-function producePassword(letter, upCase, incNum, incSym) {
-  let letterCode = lowwerLetter_from_char_codes;
-  if (upCase) letterCode = letterCode.concat(upperLetter_from_char_codes);
-  if (incNum) letterCode = letterCode.concat(numbers_from_char_codes);
-  if (incSym) letterCode = letterCode.concat(symbols_from_char_codes);
+function password(char, upCase, incNum, incSym) {
+  let agent = lowerCase;
+  if (upCase) agent = agent.concat(upperCase);
+  if (incNum) agent = agent.concat(numCase);
+  if (incSym) agent = agent.concat(symCase);
 
-  const passwordStoringVariableArray = [];
-  for (let i = 0; i < letter; i++) {
-    const letterCODE =
-      letterCode[Math.floor(Math.random() * letterCode.length)];
+  const array = [];
+  for (let i = 0; i < char; i++) {
+    const agent01 = agent[Math.floor(Math.random() * agent.length)];
 
-    passwordStoringVariableArray.push(String.fromCharCode(letterCODE));
+    array.push(String.fromCharCode(agent01));
   }
-  return passwordStoringVariableArray.join("");
+  return array.join("");
 }
 
-const upperLetter_from_char_codes = arrayFromLowToHigh(65, 90);
-const lowwerLetter_from_char_codes = arrayFromLowToHigh(97, 122);
-const numbers_from_char_codes = arrayFromLowToHigh(48, 57);
-const symbols_from_char_codes = arrayFromLowToHigh(33, 47)
-  .concat(arrayFromLowToHigh(58, 64))
-  .concat(arrayFromLowToHigh(91, 96))
-  .concat(arrayFromLowToHigh(123, 126));
+const lowerCase = getChars(97, 122);
+const upperCase = getChars(65, 90);
+const numCase = getChars(48, 57);
+const symCase = getChars(33, 47)
+  .concat(getChars(58, 64))
+  .concat(getChars(91, 96))
+  .concat(getChars(123, 126));
 
-function arrayFromLowToHigh(low, high) {
-  const arrayForLopping = [];
+function getChars(low, high) {
+  const array = [];
 
   for (let i = low; i <= high; i++) {
-    arrayForLopping.push(i);
+    array.push(i);
   }
-  return arrayForLopping;
+  return array;
 }
 
 console.log(String.fromCharCode(65));

@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 body {
-  background-color: #fffff0;
+  background: linear-gradient(to right, #c0a779, #7a763a);
   color: #8b4513;
-  margin: 0.5rem;
+  margin: 1rem;
   display: flex;
   min-height: 100vh;
   align-items: center;
@@ -13,8 +13,8 @@ body {
 
 .container {
   background-color: #e6e6fa;
-  padding: 1rem;
-  border-radius: 7px;
+  padding: 0.5rem;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,8 +25,8 @@ body {
 #form {
   display: grid;
   grid-template-columns: auto auto;
-  row-gap: 3rem;
-  column-gap: 5rem;
+  row-gap: 2.5rem;
+  column-gap: 4rem;
   justify-content: center;
   align-items: center;
 }
@@ -45,9 +45,10 @@ label {
   align-items: center;
 }
 
-.class_01 {
-  width: 2rem;
+.range {
+  width: 1.7rem;
 }
+
 h3 {
   background-color: whitesmoke;
   padding: 1rem;
@@ -64,13 +65,17 @@ h3 {
 .btn {
   grid-column: span 2;
   background-color: transparent;
-  border: 2px solid #333;
+  border: none;
   padding: 0.5rem 1rem;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 1rem;
+  border-radius: 5px;
 }
 
 .btn:hover {
-  background-color: whitesmoke;
+  background-color: rgb(247, 249, 255);
+}
+
+.box {
+  height: 13.5px;
 }

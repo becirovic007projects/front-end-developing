@@ -18,10 +18,10 @@
   </head>
   <body class="bg-bluegray-400">
     <div class="container">
-      <h1>Password Generator</h1>
-      <h3 id="pass"></h3>
+      <h1>Passwords</h1>
+      <h3 id="text"></h3>
       <form id="form">
-        <label for="A">Number Of Characters</label>
+        <label for="num">Characters</label>
         <div class="rang">
           <input type="range" min="1" max="50" value="10" id="range" />
           <input
@@ -29,21 +29,21 @@
             min="1"
             max="50"
             value="10"
-            id="A"
-            class="class_01"
+            id="num"
+            class="range"
           />
         </div>
 
-        <label for="box1">Include UpperCase:</label>
-        <input type="checkbox" id="box1" />
+        <label for="box1">UpperCase:</label>
+        <input class="box" type="checkbox" id="box1" />
 
-        <label for="box2">Include Numbers:</label>
-        <input type="checkbox" id="box2" />
+        <label for="box2">Numbers:</label>
+        <input class="box" type="checkbox" id="box2" />
 
-        <label for="box3">Include Symbols:</label>
-        <input type="checkbox" id="box3" />
+        <label for="box3">Symbols:</label>
+        <input class="box" type="checkbox" id="box3" />
 
-        <button class="btn" type="submit">Produce/Create Password</button>
+        <button class="btn" type="submit">Produce</button>
       </form>
     </div>
     <script src="main.js"></script>
