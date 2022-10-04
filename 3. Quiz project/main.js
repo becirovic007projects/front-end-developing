@@ -42,12 +42,20 @@ const quizData = [
     correct: "c",
   },
   {
-    question: "What do you say about this quiz?",
-    a: "Nice. We see the progress.",
-    b: "Bad",
-    c: "Excellent",
-    d: "Noob",
-    correct: "a", // if you choosed c, special thanks to you. :D
+    question: "Ancient mythology name for planet earth?",
+    a: "Terra",
+    b: "Gaia",
+    c: "Luna",
+    d: "Uranus",
+    correct: "a",
+  },
+  {
+    question: "Aristotle was taught by: ",
+    a: "Plato",
+    b: "Socrates",
+    c: "Pythagoras",
+    d: "Kant",
+    correct: "a",
   },
 ];
 
