@@ -211,8 +211,8 @@ header button {
 }
 
 .pop .close {
-  top: 1rem;
-  right: 1rem;
+  top: 3rem;
+  right: 1.3rem;
   position: absolute;
   background-color: transparent;
   border: none;
